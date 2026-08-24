@@ -1,11 +1,23 @@
-const name ="สมชาย", score = 82;
+function getPriceBuggy(size) {
+    let price = 0;
+    switch (size) {
+        case "s": price = 30; break;
+        case "m": price = 40; break;
+        case "l": price = 50; break;
+        default: price = 0; break;
+    }
+    return price;
+}
 
-console.log("แบบเก่า:  + ชื่อ" + name + "ได้" + score + " คะแนน");
+function getPriceFixed(size) {
+    switch (size) {
+        case "s": return 30;
+        case "m": return 40;
+        case "l": return 50;
+        default: return 0;
+    }
+}
 
-console.log(`แบบใหม่: ชื่อ ${name} ได้ ${score} คะแนน`);
-
-console.log('ครึ่งหนึ่งของคะแนนคือ ${score / 2}');
-console.log('ผ่านเกณฑ์หรือไม่: ${score >= 50 ? "ผ่าน" : "ไม่ผ่าน"}');
-
-console.warn("console.warn - คำเตือน");
-console.error("console.error - ข้อผิดพลาด");
+for (const s of ["s", "m", "l", "xl"]) {
+    console.log("ขนาด " + s + " -> มีบั๊ก: " + getPriceBuggy(s) + " | แก้แล้ว:" + getPriceFixed(s))
+}
