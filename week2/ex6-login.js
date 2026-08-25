@@ -18,5 +18,11 @@ function login(inputUser, inputPass, role, isActive, age) {
         return "อายุไม่ถึงเกณฑ์";
     }
 
-    if 
+    if (role === "อาจารย์") {
+        return "200 เข้าสู่ระบบสำเร็จ (สิทธิ์ผู้ดูแล)";
+    } else if (role === "นักศึกษา") {
+        return "200 เข้าสู่ระบบสำเร็จ (สิทธิ์ทั่วไป)";
+    }
 }
+
+//ส่วนที่ 2
