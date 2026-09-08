@@ -27,7 +27,7 @@ function getGrade(score) {
 }
 
 // ส่วนที่ 1
-function fetchStudentById(id) {
+function fetchStudentByIdAsync(id) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             if (typeof id !== "string" || id.trim() === "") {
@@ -49,7 +49,7 @@ fetchStudentByIdAsync("6704")
     })
 
     .catch((err) => {
-        console.error("กรณี ก) สำเร็จ:", err.name);
+        console.error("กรณี ก) สำเร็จ:", err.message);
     })
 
     .finally(() => {
