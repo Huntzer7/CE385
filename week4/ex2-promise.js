@@ -94,13 +94,13 @@ fetchStudentByIdAsync("6701")
     .then((data) => {
         return `นักศึกษา ${data.name} สอบได้เกรด ${data.grade}`;
     })
-    .then((repportMessage) => {
-        console.log(repportMessage);
-        return repportMessage;
+    .then((reportMessage) => {
+        console.log(reportMessage);
+        return reportMessage;
     })
     .catch((err) => {
         console.error("Error chain:", err.message);
-    })
+    });
 
 // ส่วนที่ 4
 function promisify(fn) {
