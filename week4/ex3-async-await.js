@@ -53,7 +53,7 @@ async function reportSequential() {
     }
 
     const duration = Date.now() - startTime;
-    console.log(`Sequential: ใช้เวลา ${duration} ms`);
+    console.log(`Sequential: ดึงข้อมูล 3 คนใช้เวลา ${duration} ms`);
     return duration;
 }
 
@@ -84,7 +84,11 @@ async function safeReport(id) {
 }
 
 async function main() {
-    console.log("=== ทดสอบการทำงาน safeReport ===");
+    console.log("=== ReportSequential ===")
+    const seqTime = await reportSequential();
+    console.log("=== ReportParallel ===")
+    await reportParallel(seqTime);
+    console.log("=== safeReport ===");
     await safeReport("6701");
     await safeReport("9999");
     await safeReport("42");
