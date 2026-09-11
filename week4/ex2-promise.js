@@ -116,6 +116,7 @@ function promisify(fn) {
     };
 }
 
+// โค้ดตรวจสอบจากข้อ 1
 function divideNumbers(a, b, callback) {
     setTimeout(() => {
         if (typeof a !== "number" || typeof b !== "number") {
